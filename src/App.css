@@ -1,0 +1,119 @@
+/* Fondo negro para toda la página */
+html, body {
+  background-color: #08080800 !important;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+/* Estilos para el contenedor principal */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  
+}
+
+.search-input {
+  display: block;
+  margin: 30px auto;
+  padding: 12px;
+  font-size: 18px;
+  width: 300px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: rgb(14, 13, 13);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Contenedor de las cartas de Pokémon */
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartas por fila */
+  gap: 30px;
+  padding: 30px;
+  justify-items: center;
+  margin-top: 40px;
+  
+}
+
+.titulo {
+  font-size: 54px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 #888,
+     1px -1px 0 #888,
+    -1px  1px 0 #888,
+     1px  1px 0 #888;
+}
+
+
+/* Estilo de las cartas de Pokémon */
+.pokemon-card {
+  /*background-color: #e60b29;*/
+  background: linear-gradient(135deg, #bddbdf, #c032ad); /* Degradado de fondo azul claro */
+  border-radius: 20px;
+  width: 240px; /* Aumentar el ancho de las cartas */
+  height: 350px; /* Aumentar la altura de las cartas */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #646b6e; /* Borde azul más pronunciado */
+}
+
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), transparent, rgba(255, 255, 255, 0.3));
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05); /* Agrandar ligeramente la carta al hacer hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-image {
+  width: 250px; /* Aumentar el tamaño de las imágenes */
+  height: 800px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-image {
+  transform: scale(1.15); /* Aumentar la imagen al pasar el ratón */
+}
+
+.pokemon-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+
